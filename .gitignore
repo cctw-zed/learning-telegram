@@ -1,0 +1,21 @@
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Binary executable from 'go build' in cmd/server
+/cmd/server/server
+
+# Local database file
+*.db
+
+# IDE-specific folders
+.idea/
+.vscode/
+
+# Local environment variables
+.env
