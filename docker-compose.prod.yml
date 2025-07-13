@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Go Backend Service - 使用远端预构建镜像
+  backend:
+    image: husterxun/telegram-backend:latest
+    container_name: telegram-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend_data:/data
+    networks:
+      - telegram-net
+
+  # Vue.js Frontend Service - 使用远端预构建镜像
+  frontend:
+    image: husterxun/telegram-frontend:latest
+    container_name: telegram-frontend
+    restart: unless-stopped
+    ports:
+      - "8888:8888"
+    depends_on:
+      - backend
+    networks:
+      - telegram-net
+
+# 定义网络
+networks:
+  telegram-net:
+    driver: bridge
+
+# 定义数据卷用于后端数据持久化
+volumes:
+  backend_data:
+    driver: local 

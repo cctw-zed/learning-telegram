@@ -202,7 +202,45 @@ learning-telegram/
 - WebSocket连接也需要Token验证
 - 群组权限验证（只有群成员才能访问群消息）
 
-## 🚀 快速开始
+## 🚀 容器化运行 (推荐)
+
+本项目已在 Docker Hub 上提供了预构建好的镜像，您只需要安装 [Docker](https://www.docker.com/) 和 [Docker Compose](https://docs.docker.com/compose/install/) 即可一键启动整个应用。
+
+### 1. 启动应用
+
+在项目根目录下，执行以下一条命令即可。Docker Compose 将会自动从 Docker Hub 拉取预构建的镜像，并在后台启动所有服务。
+
+```bash
+docker-compose up -d
+```
+
+服务启动后，您可以通过以下地址访问：
+- **前端应用**: `http://localhost:8888`
+- **后端API**: `http://localhost:8080` (通常由前端访问，无需直接操作)
+
+### 2. 查看日志
+
+如果需要查看服务运行的实时日志，可以执行：
+
+```bash
+docker-compose logs -f
+```
+
+### 3. 停止应用
+
+```bash
+docker-compose down
+```
+
+### 镜像地址
+
+本项目使用的预构建镜像托管在 Docker Hub，您可以在以下地址找到它们：
+
+- **后端**: [`husterxun/telegram-backend`](https://hub.docker.com/r/husterxun/telegram-backend)
+- **前端**: [`husterxun/telegram-frontend`](https://hub.docker.com/r/husterxun/telegram-frontend)
+- **构建器** (供开发者使用): [`husterxun/telegram-builder`](https://hub.docker.com/r/husterxun/telegram-builder)
+
+## 🛠️ 本地开发启动 (不使用Docker)
 
 ### 后端启动
 

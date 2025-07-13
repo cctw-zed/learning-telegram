@@ -25,8 +25,8 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # We need to go up one level to access the 'deploy' directory
 COPY deploy/nginx.prod.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 80 for the Nginx server
-EXPOSE 80
+# Expose port 8888 for the Nginx server
+EXPOSE 8888
 
 # The default command for the nginx image is to start the server
 CMD ["nginx", "-g", "daemon off;"] 

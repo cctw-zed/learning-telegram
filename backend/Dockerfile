@@ -1,6 +1,6 @@
 # Stage 1: Build the Go binary
 # Use our custom builder image which has build-base and goproxy pre-configured.
-FROM telegram-builder:latest AS builder
+FROM husterxun/telegram-builder:latest AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
