@@ -1,6 +1,31 @@
 # Learning Telegram - 即时通讯学习项目
 
+[![CI/CD Pipeline](https://github.com/husterxun/learning-telegram/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/husterxun/learning-telegram/actions/workflows/ci-cd.yml)
+[![PR Preview](https://github.com/husterxun/learning-telegram/actions/workflows/pr-preview.yml/badge.svg)](https://github.com/husterxun/learning-telegram/actions/workflows/pr-preview.yml)
+
 这是一个基于Go语言和Vue.js的即时通讯应用学习项目，模仿Telegram的核心功能实现。
+
+## 🚀 CI/CD 自动化
+
+本项目集成了完整的CI/CD流水线，包括：
+
+### 主要工作流
+- **代码质量检查**: Go代码格式化、静态分析，前端代码检查
+- **安全扫描**: 使用Trivy进行漏洞扫描
+- **自动构建**: 每次推送到主分支时自动构建Docker镜像
+- **自动发布**: 构建成功后自动推送到Docker Hub
+
+### Pull Request工作流
+- **预览构建**: PR提交时进行构建测试，确保代码质量
+- **无推送构建**: 仅验证构建过程，不推送到生产环境
+
+### 触发条件
+- **主分支推送**: 触发完整的CI/CD流程
+- **Pull Request**: 触发预览构建和质量检查
+
+### 🔧 CI/CD 设置
+
+如需配置CI/CD流程，请参考 [CI/CD设置指南](docs/CICD_SETUP.md)。
 
 ## 🏗️ 项目架构
 
