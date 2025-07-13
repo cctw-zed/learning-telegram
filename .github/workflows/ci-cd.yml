@@ -121,6 +121,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: ./docker/builder
+        platforms: linux/amd64,linux/arm64
         push: true
         tags: ${{ env.BUILDER_IMAGE }}:latest,${{ env.BUILDER_IMAGE }}:${{ github.sha }}
         cache-from: type=gha
@@ -130,6 +131,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: ./backend
+        platforms: linux/amd64,linux/arm64
         push: true
         tags: ${{ env.BACKEND_IMAGE }}:latest,${{ env.BACKEND_IMAGE }}:${{ github.sha }}
         cache-from: type=gha
@@ -140,6 +142,7 @@ jobs:
       with:
         context: .
         file: ./frontend/Dockerfile
+        platforms: linux/amd64,linux/arm64
         push: true
         tags: ${{ env.FRONTEND_IMAGE }}:latest,${{ env.FRONTEND_IMAGE }}:${{ github.sha }}
         cache-from: type=gha
